@@ -1,0 +1,184 @@
+<html>
+  <head>
+    <style>
+      
+      
+    </style>
+  </head>
+
+  <body style="overflow: hidden;">
+   
+    
+        <div class = "image" id="image1" style="height: 100%; width: 100%;position: relative;"> <!--left section-->
+                        
+            <div style="position: relative; ">
+                <img src="pic.png" alt = "" style="height: 100%; width: 100%; "/>
+                <br /><b> <h1 style = "text-align: center; position: absolute; left:40%; top: 10px; white-space: nowrap;" >Plan your Vacation</h1></b>
+                <div style="display: flex; position:absolute; top:10%;left: 40%; text-align: center">
+                    <input
+                      type="radio" name="one" id="oneway" value="One Way"/>One way
+                    <input type="radio" name="one" id="roundtrip" value="Round Trip"/>Round Trip<br />
+                </div > 
+                
+                <div style="position: absolute; top: 20%; left: 10%;">
+                    <form name="myform" onsubmit="return Validpassword()">
+                        
+                        <label for="source">From</label> &nbsp;
+                        <select id="source" name="source">
+                          <option value="melbourne">Melbourne</option>
+                          <option value="sydney">Sydney</option>
+                          <option value="perth">Perth</option>
+                          <option value="canberra">Canberra</option>
+                        </select><br><br>
+                      
+                      
+                        <label for="source">To</label>
+                        <select id="source" name="source">
+                          <option value="melbourne">Melbourne</option>
+                          <option value="sydney">Sydney</option>
+                          <option value="perth">Perth</option>
+                          <option value="canberra">Canberra</option>
+                        </select><br><br>
+
+                        <label for="onward">Onward</label>
+                        <input type="date" id="onward" name="onward" /><br><br>
+                        <label for="return">Return</label>
+                        <input type="date" id="return" name="return" /><br><br>
+                        Number of Passengers<input type="text" name="passengernumber" /> <br /><br />
+                        Email <input type="text" name="myemail" id="myemail" >
+                      
+                    </div>     
+                    <div style="display: flex;">
+                    <div style="position: absolute; top: 15%; right: 35%;">
+                        <h3>Passenger1 Details</h3>
+                        <label for="name1">Passenger1 Name</label>
+                        <input type="text" id="name1" name="name1" /><br><br>
+                        <label for="age1">Age</label>
+                        <input type="text" id="age1" name="age1" /><br><br>
+                        <input
+                      type="radio" name="gen1" id="gender1" value="Male"/>Male
+                    <input type="radio" name="gen1" id="genf1" value="Female"/>Female<br />
+                    </div>
+
+                    <div style="position: absolute; top: 15%; right: 10%;">
+                        <h3>Passenger2 Details</h3>
+                        <label for="name2">Passenger2 Name</label>
+                        <input type="text" id="name2" name="name2" /><br><br>
+                        <label for="name2">Age</label>
+                        <input type="number" id="age2" name="age2" onkeypress="age2()"/><br><br>
+                        <input
+                      type="radio" name="gen2" id="gender2" value="Male2"/>Male
+                    <input type="radio" name="gen2" id="genf2" value="Female2"/>Female<br /><br><br><br>
+                    <input type="submit" value="SUBMIT"/>
+                </form>
+                    </div>
+                    
+                </div>
+                </div>
+                
+            </div>
+          </div>
+ 
+       <script>
+
+        
+        
+        function Validpassword()
+              {
+              
+                         
+
+               let pname1=document.getElementById("name1").value;
+               
+
+               
+                 
+                 if (pname1== "null" || pname1 == "")
+                        {
+                           alert( "Enter correctname");
+                           return false;
+                        }
+
+
+                        let pname2 =document.getElementById("name2").value;
+                 
+                 if (pname2== "null" || pname2 == "")
+                        {
+                           alert( "Enter correctname");
+                           return false;
+                        }
+                        
+                        let a1=document.getElementById("age1").value;
+                 
+                 if (a1== "null" || a1 > 110 ||  a1 == "" || a1 < 1) 
+                        {
+                           alert( "Enter correctage");
+                           return false;
+                        } 
+
+                 
+                        
+            
+            let a2=document.getElementById("age2").value;
+            if (a2== "null" || a2 > 110 ||  a2 == "" || a2 < 1) 
+                        {
+                           alert( "Enter correctage");   
+                           return false;                        
+                        }
+                 
+                
+
+                        
+                        
+                        
+
+           let mymail=document.myform.myemail.value;
+           let attherate=mymail.indexOf("@");
+           let atthedot=mymail.lastIndexOf(".");
+
+           if (attherate<1 || atthedot<attherate+2 || atthedot>=mymail.length)
+                  {
+                     alert( "enter the correct email");
+                     return false;
+                  }
+
+            let curdate=new Date();
+                 let dob2=Date(document.myform.onward.value)
+
+                 if (dob2>curdate)
+                        {
+                           alert( "enter the correct DOB");
+                           return false;
+                        }
+                        
+                        let dob3=Date(document.myform.return.value)
+
+                 if (dob3>curdate)
+                        {
+                           alert( "enter the correct DOB");
+                           return false;
+                        }
+
+
+                        let mobile1=(document.myform.mobile.value)
+
+if (mobile1.length==10)
+    {
+       return true
+    }
+ else      
+        {
+          alert( "enter the correct 10 digits number");
+          return false;
+       }
+
+
+
+     } 
+
+       </script> 
+    
+
+ 
+  </body>
+</html>
